@@ -1,0 +1,31 @@
+package controller;
+
+import java.io.IOException;
+import java.rmi.ServerException;
+import java.sql.Date;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class MemberUpdateController implements Controller{
+	@Override
+	public String execute(HttpServletRequest req, HttpServletResponse resp){
+			if(req.getMethod().equals("POST")) {
+				return processUpdateService(req,resp);
+			}else if(req.getMethod().equals("GET")) {
+				return processUpdateView(req,resp);				
+			}
+			return "redirect::/";
+	}
+	
+	private String processUpdateService(HttpServletRequest req, HttpServletResponse resp) {
+		//파라미터 추출
+		int custno = Integer.parseInt(req.getParameter("custno"));
+		String custname = req.getParameter("custname");
+		String phone = req.getParameter("phone");
+		String address = req.getParameter("address");
+		Date joindate = Date.valueOf("joindate");
+		String grade = req.getParameter("grade");
+		String city = req.getParameter("city");
+	}
+}

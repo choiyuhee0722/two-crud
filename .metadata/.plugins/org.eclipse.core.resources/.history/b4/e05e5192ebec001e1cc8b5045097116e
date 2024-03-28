@@ -1,0 +1,10 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import="vo.MemberMoneyVOO"%>
+<%@ page import="dao.MemberDao"%>
+<%@ page import="java.util.ArrayList"%>
+
+<%
+		MemberDao dao = new MemberDao();
+	ArrayList<MemberMoneyVO> list = dao.memberMoneyList();
+%>

@@ -1,0 +1,37 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
+<jsp:include page="master/header.jsp"/>
+    
+    <section>
+    <div class="container">
+    	<p class="title">홈쇼핑 회원 등록</p>
+    	<form action="/memberInsert" method="post" name="frm">
+    		<table width="600px">
+    			<tr>
+    				<td>회원번호(자동발생)</td>
+    				<td><input type="number" value="${custno}" name="custno" id="custno" readonly="readonly"></td>
+    			</tr>
+    			<tr>
+    				<td>회원성명</td>
+    				<td><input type="text" id="phone" name="phone"></td>
+    			</tr>
+    			<tr>
+    				<td>회원주소</td>
+    				<td><input type="text" id="address" name="address"></td>
+    			</tr>
+    			<tr>
+    				<td>가입일자</td>
+    				<td><input type="date" id="joindate" name="joindate"></td>
+    			</tr>
+    			<tr>
+    				<td>회원성명</td>
+    				<td><input type="text" id="phone" name="phone"></td>
+    			</tr>
+    			
+    		</table>
+    	</form>
+    </div>
+    </section>
+	    
+<jsp:include page="master/footer.jsp"/>

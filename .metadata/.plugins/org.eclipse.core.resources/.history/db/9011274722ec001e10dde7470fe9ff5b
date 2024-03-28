@@ -1,0 +1,23 @@
+package controller;
+
+import java.io.IOException;
+import java.rmi.ServerException;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class MemberInsertCotroller implements Controller{
+	@Override
+	public String execute(HttpServletRequest req, HttpServletResponse resp) throws ServerException, IOException {
+		if(req.getMethod().equals("POST")) {
+					return processInsertService(req.resp);				
+		}else if(req.getMethod().equals("GET")) {
+					return processInsertView(req.resp);
+		}
+		return "redirect::/";
+	}
+	
+	private String processInsertService(HttpServletRequest req, HttpServletResponse resp) throws ServerException, IOException {
+		
+	}
+}

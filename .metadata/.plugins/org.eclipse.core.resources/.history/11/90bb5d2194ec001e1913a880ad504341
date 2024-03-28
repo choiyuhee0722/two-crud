@@ -1,0 +1,9 @@
+package vo;
+
+import java.sql.Date;
+
+public class MemberVO {
+	private int custno;
+	private String custname;
+	private String grade;
+}

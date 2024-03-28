@@ -1,0 +1,46 @@
+package dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+
+import javax.naming.spi.DirStateFactory.Result;
+
+import common.DBUtils;
+import controller.Controller;
+import vo.MemberVO;
+
+public class MemberDao implements Controller{
+	public ArrayList<MemberVO> memberList(){
+		ArrayList<MemberVO> list = new ArrayList<MemberVO>();
+		
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		
+		try {
+				
+			conn = DBUtils.getConnection();
+			ps = conn.prepareStatement("select custno, custname, phone"
+					+ "address, joindate, decode(grade,'A','VIP','B','일반','C','직원') grade, city \r\n"+
+					"from member_tbl_02 order by scustno");
+			rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				MemberVO vo = new MemberVO();
+				vo.setCustno(rs.getInt("custno"));
+				vo.setCustname(rs.getString("custname"));
+				vo.setPhone(rs.getString("phone"));
+				vo.setAddress(rs.getString("address"));
+				vo.setJoindate(rs.getDate("joindate"));
+				vo.setGrade(rs.getString("grade"));
+				vo.setCustno(rs.getInt("custno"));
+			}
+		}catch(Exception e) {
+			
+		}finally {
+			
+		}
+	}
+}

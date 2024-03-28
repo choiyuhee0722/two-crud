@@ -1,0 +1,24 @@
+package controller;
+
+import java.io.ObjectInputFilter.Config;
+import java.lang.ModuleLayer.Controller;
+import java.util.HashMap;
+
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+
+public class FrontController extends HttpServlet{
+		String charset = null;
+		HashMap<String, Controller> list = null;
+		
+		private final String prefix = "/view";
+		private final String postfix = ".jsp";
+		
+		@Override
+		public void init(ServletConfig config) throws ServletException {
+			charset = config.getInitParameter("charset");
+			list = new HashMap<String,Controller>();
+		}
+		
+}

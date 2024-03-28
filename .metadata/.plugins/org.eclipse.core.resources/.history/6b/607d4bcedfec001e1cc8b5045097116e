@@ -1,0 +1,19 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import="vo.MemberVO"%>
+<%@ page import="dao.MemberDao"%>
+<%@ page import="java.util.ArrayList"%>
+
+<%
+		MemberDao dao = new MemberDao();
+	ArrayList<MemberVO> list = dao.memberList();
+%>
+
+<jsp:include page="master/header.jsp"/>
+<section>
+	<div class="container">
+			<p class="title">회원목록조회/수정</p>
+	</div>
+</section>
+
+<jsp:include page="master/footer.jsp"/>

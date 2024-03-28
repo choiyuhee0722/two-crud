@@ -1,0 +1,23 @@
+package biz;
+
+import java.io.IOException;
+import java.rmi.ServerException;
+import java.security.PublicKey;
+import java.util.ArrayList;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import controller.Controller;
+import dao.MemberDao;
+import vo.MemberVO;
+
+public class MemberService{
+		MemberDao dao = new MemberDao();
+		
+		public ArrayList<MemberVO> memberList(){
+				ArrayList<MemberVO> list = dao.memberList();
+				return list;
+	}
+		
+}

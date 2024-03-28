@@ -1,0 +1,20 @@
+<%@page import="vo.MemberMoneyVO"%>
+<%@page import="vo.MemberVO" %>
+<%@page import="java.util.ArrayList" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
+<jsp:include page="master/header.jsp"/>
+ 
+ <!-- section -->
+ <section>
+ 	<div class="container">
+ 		<p class="title">회원매출조회</p>
+<%
+		ArrayList<MemberMoneyVO> list = (ArrayList<MemberMoneyVO>)request.getAttribute("list");
+		if(list.isEmpty()){
+%> 		
+		}
+ 	</div>
+ </section>
+<jsp:include page="master/footer.jsp"/>
